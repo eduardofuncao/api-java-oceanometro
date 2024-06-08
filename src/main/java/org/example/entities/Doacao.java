@@ -1,5 +1,8 @@
 package org.example.entities;
 
+import org.example.services.ConversaoService;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -68,6 +71,10 @@ public class Doacao {
 
     public void setIdInstituicao(String idInstituicao) {
         this.idInstituicao = idInstituicao;
+    }
+
+    public double converteDolares() throws IOException {
+        return ConversaoService.getConversao("USD-BRL");
     }
 
     @Override

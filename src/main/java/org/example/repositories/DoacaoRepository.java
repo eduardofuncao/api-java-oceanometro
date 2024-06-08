@@ -188,7 +188,6 @@ public class DoacaoRepository {
         var doacaos = new ArrayList<Doacao>();
         try(var conn = new OracleDbConfiguration().getConnection();
             var stmt = conn.prepareStatement("SELECT * FROM " + TB_NAME + " ORDER BY VALOR DESC FETCH FIRST 10 ROWS ONLY");){
-
             var rs = stmt.executeQuery();
             while (rs.next()){
                 doacaos.add(new Doacao(
