@@ -33,12 +33,7 @@ public class UsuarioResource {
                 orderBy, direction, limit, offset)).build();
     }
 
-    @GET
-    @Path("categoria/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllByCategoria(@PathParam("id") int idCategoria) {
-        return Response.ok(usuarioRepository.getAllByCategoria(idCategoria)).build();
-    }
+
 
     @GET
     @Path("{id}")
